@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live DOM Output</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+<div class="flex justify-center font-normal bg-white gap-10 p-10">
+
+  
+  <div class="bg-white p-5 rounded-xl w-64 shadow-md">
+
+    <h3 class="text-lg font-bold mb-4">Update Variables</h3>
+
+    
+    <label class="text-sm font-semibold block mb-2">Name:</label>
+    <input
+      class="border p-2 w-full rounded mb-4"
+      value="Shwe Yati Win"
+      oninput="document.getElementById('outName').innerText = this.value">
+
+    
+    <label class="text-sm font-semibold block mb-2">Age:</label>
+    <input
+      class="p-2 w-full border rounded mb-4"
+      value="24"
+      oninput="document.getElementById('outAge').innerText = this.value">
+
+    
+    <label class="text-sm font-semibold block mb-2">VIP:</label>
+    <input type="checkbox" checked
+      class="mb-4" onchange=" const vip = document.getElementById('vipText');
+        if (this.checked) {
+          vip.style.display = 'inline-block';
+        } else {
+          vip.style.display = 'none'; }">
+
+    
+    <label class="text-sm font-semibold block mb-2">Card Color:</label>
+    <input type="color"
+      class="w-full h-10 border rounded mb-4"
+      onchange="document.getElementById('card').style.background = this.value">
+
+  </div>
+
+  
+  <div class="bg-white p-5 rounded-xl w-64 shadow-md">
+
+    <h3 class="text-lg font-bold mb-4">Live DOM Output</h3>
+
+    <div id="card"class="border-2 border-black rounded-xl p-4 bg-gray-200">
+
+      
+      <div id="vipText"class="inline-block bg-yellow-400 text-xs font-bold rounded mb-2">VIP MEMBER</div>
+
+      
+      <h3 id="outName" class="text-lg font-bold">Shwe Yati Win</h3>
+
+      
+      <p><span id="outAge">24</span></p>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
